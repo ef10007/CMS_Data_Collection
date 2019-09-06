@@ -1,5 +1,6 @@
 from pymatgen import MPRester
 from pymatgen.analysis.phase_diagram import PhaseDiagram, PDPlotter
+import os
 
 JINNYAPI = os.environ['materials_project']
 

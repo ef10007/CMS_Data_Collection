@@ -105,3 +105,8 @@ venv.bak/
 
 data/
 .DS_Store
+
+# dtuniv
+dtuniv/c2db.db
+dtuniv/cmr
+
