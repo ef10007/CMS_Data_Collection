@@ -107,6 +107,8 @@ data/
 .DS_Store
 
 # dtuniv
-dtuniv/c2db.db
-dtuniv/cmr
+dt_univ/c2db.db
+dt_univ/cmr
+
+*.db
 
