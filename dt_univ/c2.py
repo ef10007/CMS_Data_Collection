@@ -12,7 +12,7 @@ from pprint import pprint
 with connect('c2db.db') as db:
     print('Connected.')  
 
-    for i, d in enumerate(db.select('C=1')):
+    print(len(list(enumerate(db.select('')))))
         # print('id', d.id)
         # print('numbers', d.numbers)
         # print('cell', d.cell)
