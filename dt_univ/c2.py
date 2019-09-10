@@ -7,10 +7,12 @@ from pprint import pprint
 # Connect to database
 # db = connect('c2db.db', type='db')
 
-# rows = db.select('Ru=2')
+# rows = db.select('C=2')
 
 with connect('c2db.db') as db:
-    print('Connected.')  
+    print('Connected.') 
+    
+    d = db.select('C=2')
 
     print(len(list(enumerate(db.select('')))))
         # print('id', d.id)

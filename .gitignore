@@ -110,5 +110,6 @@ data/
 dt_univ/c2db.db
 dt_univ/cmr
 
+oqmd/oqmd
 *.db
 
