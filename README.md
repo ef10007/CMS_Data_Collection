@@ -1,14 +1,13 @@
 # computational_materials_science
 
-A project for integration of CMS related databases into our own.
+A project for the integration of individual CMS related databases into our own database.
 
 ### List of databases
 
-1. https://cmr.fysik.dtu.dk/ as folder ```dt_univ```
-2. https://nomad-coe.eu/ as folder ```nomad```
-3. https://materialsproject.org/ as folder ```materials_projects```
+1. https://cmr.fysik.dtu.dk/ as folder ```cmr```
+2. https://materialsproject.org/ as folder ```mp```
+3. https://nomad-coe.eu/ as folder ```nomad```
 4. http://oqmd.org/download/ as folder ```oqmd```
 
-py
 ### Appendix
 material design  http://www.optimade.org/
