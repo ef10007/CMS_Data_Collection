@@ -2,10 +2,11 @@
 
 ### Documents
 
-[Python Materials Genomics (pymatgen)](http://pymatgen.org/)
+[Python Materials Genomics (pymatgen)](http://pymatgen.org/) <br />  
+
 [The Materials API (MAPI)](https://materialsproject.org/docs/api)
 
 ### API key
 
-Go to the (website https://materialsproject.org)[https://materialsproject.org] and sign-in to generate API key.
+Go to the (website materialsproject.org)[https://materialsproject.org] and sign-in to generate API key.
 
