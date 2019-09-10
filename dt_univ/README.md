@@ -1,9 +1,8 @@
-# Materials Project Organisation
+# COMPUTATIONAL MATERIALS REPOSITORY (CMR) from Technical University of Denmark
 
-### Documents
+### Documentations
 
-https://materialsproject.org/docs/api
-
+https://cmr.fysik.dtu.dk/
 https://wiki.fysik.dtu.dk/ase/ase/db/db.html#description-of-a-row
 
 ### Database list

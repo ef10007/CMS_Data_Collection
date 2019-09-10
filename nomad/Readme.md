@@ -3,7 +3,7 @@
 https://repository.nomad-coe.eu/uploads/gui/search
 
 
-6852492 rows in total
+FYI, 6852492 rows in total
 
 https://github.com/conan-io/conan/issues/752
 
