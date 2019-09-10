@@ -13,7 +13,7 @@ All CMR databases are licensed under a Creative Commons Attribution-ShareAlike 4
 
 ### Database list
 
-1. Computational 2D Materials Database (C2DB)
+##### 1. Computational 2D Materials Database (C2DB)
 
 ``` wget https://cmr.fysik.dtu.dk/_downloads/b3389f733093ea07dfa5cb62e083cdbb/c2db.db ```
 
