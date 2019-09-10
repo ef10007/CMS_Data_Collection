@@ -7,7 +7,7 @@ All CMR databases are licensed under a Creative Commons Attribution-ShareAlike 4
 
 [Official website](https://cmr.fysik.dtu.dk/) <br/> 
 
-[Atomic Simulation Environment (ASE)](https://wiki.fysik.dtu.dk/ase/index.html)
+[Atomic Simulation Environment (ASE)](https://wiki.fysik.dtu.dk/ase/ase/db/db.html)
 
 ----
 

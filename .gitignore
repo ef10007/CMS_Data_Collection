@@ -108,7 +108,9 @@ data/
 
 # dtuniv
 cmr/c2db.db
+cmr/c2dm.db
 cmr/cmr
+
 
 oqmd/oqmd
 *.db
