@@ -10,4 +10,6 @@ A project for the integration of individual CMS related databases into our own d
 4. http://oqmd.org/download/ as folder ```oqmd```
 
 ### Appendix
-material design  http://www.optimade.org/
+
+Automatic flow http://www.aflow.org/ <br />
+Material design  http://www.optimade.org/

@@ -20,10 +20,16 @@ for row in rows:
     vbms.append(row.vbm)
     cbms.append(row.cbm)
 
+print('labels', labels)
+print('vbms', vbms)
+print('cbms', cbms)
+
 x = np.arange(len(vbms)) + 0.5
 emin = floor(min(vbms)) - 1.0
 
-# With and height in pixels
+print('x', x, 'emin', emin)
+
+With and height in pixels
 ppi = 100
 figw = 800
 figh = 400
@@ -40,4 +46,4 @@ ax.set_xticklabels(labels, rotation=90, fontsize=10)
 plt.title("2H-TMD's: Positions of VBM and CBM (PBE+SOC)", fontsize=12)
 plt.ylabel('Energy relative to vacuum [eV]', fontsize=10)
 plt.tight_layout()
-plt.savefig('band-alignment.png')
+plt.savefig('band-alignment_c2.png')
