@@ -8,5 +8,5 @@
 
 ### API key
 
-Go to the website (materialsproject)[https://materialsproject.org] and sign-in to generate API key.
+Go to the website [materials project organisation](https://materialsproject.org) and sign-in to generate your API key.
 
