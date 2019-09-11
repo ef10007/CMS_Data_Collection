@@ -106,11 +106,14 @@ venv.bak/
 data/
 .DS_Store
 
+.vscode
+
 # dtuniv
 cmr/c2db.db
 cmr/c2dm.db
 cmr/cmr
 
+nomad/nomadfair
 
 oqmd/oqmd
 *.db

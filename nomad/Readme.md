@@ -10,7 +10,7 @@ Gitlab project: <br />
 https://gitlab.mpcdf.mpg.de/nomad-lab/nomad-FAIR <br />
 
 API document:  <br />  
-https://repository.nomad-coe.eu/uploads/api/docs/index.html
+https://repository.nomad-coe.eu/uploads/api/docs/index.html <br /> 
 https://repository.nomad-coe.eu/uploads/api/docs/setup.html#install-python-code-and-dependencies
 
 Static files: <br />
