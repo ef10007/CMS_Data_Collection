@@ -9,7 +9,7 @@ A project for the integration of individual CMS related databases into our own d
 3. https://nomad-coe.eu/ as folder ```nomad```
 4. http://oqmd.org/download/ as folder ```oqmd```
 
-### Appendix
+### Additional resources
 
 Automatic flow http://www.aflow.org/ <br />
 Material design  http://www.optimade.org/
