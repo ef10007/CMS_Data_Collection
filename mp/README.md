@@ -1,4 +1,4 @@
-# Materials Project Organisation
+# Materials Project
 
 ### Documents
 
@@ -8,5 +8,5 @@
 
 ### API key
 
-Go to the website [materials project organisation](https://materialsproject.org) and sign-in to generate your API key.
+Go to the website [materials project](https://materialsproject.org) and sign-in to generate your API key.
 

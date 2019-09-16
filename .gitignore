@@ -115,6 +115,8 @@ cmr/cmr
 
 nomad/nomadfair
 
-oqmd/oqmd
+oqmd/oqmdenv
+oqmd/qmpy
+
 *.db
 

@@ -29,7 +29,7 @@ emin = floor(min(vbms)) - 1.0
 
 print('x', x, 'emin', emin)
 
-With and height in pixels
+# With and height in pixels
 ppi = 100
 figw = 800
 figh = 400

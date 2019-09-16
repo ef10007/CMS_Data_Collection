@@ -16,6 +16,8 @@ https://repository.nomad-coe.eu/uploads/api/docs/setup.html#install-python-code-
 Static files: <br />
 http://data.nomad-coe.eu
 
+``` wget http://data.nomad-coe.eu/normalized/productionH5/```
+
 ##### Additional Information
 
 https://emmc.info/wp-content/uploads/2017/12/EMMC_IntOp2017-Cambridge_Mohamed_NOMAD.pdf
