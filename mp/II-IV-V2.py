@@ -3,7 +3,6 @@ from pprint import pprint
 import os
 JINNYAPI = os.environ['materials_project']
 
-import csv
 import itertools
 from zipfile import ZipFile
 
@@ -27,40 +26,46 @@ def get_double_pnictogens():
     return nlst
 
 def get_semiconductors_chemsys():
-    
     g2 = get_alkaline()
     g4 = get_crystallogens()
     g5 = get_pnictogens()
-
     return sorted(["{}-{}-{}".format(*sorted(pair))
                     for pair in itertools.product(g2, g4, g5)])
 
 def get_list():
     with MPRester(JINNYAPI) as m:
-        data = m.query({'chemsys': {'$in': get_semiconductors_chemsys()} }, ['material_id', 'pretty_formula'])
 
-        for i in range(len(data)):
-            formula = data[i]['pretty_formula']
+        data = m.query({'chemsys': {'$in': get_semiconductors_chemsys()} }, ['material_id', 'pretty_formula', 'cif'])
 
-            # if any("abc" in s for s in some_list):
+        for d in itertools.chain(data):
+            docs = {}
+            mid = d['material_id']
+            formula = d['pretty_formula']
+            cif = d['cif']
+
+            numbers = sum(letter.isdigit() for letter in formula)
+
+            if numbers > 1 or '(' in formula:
+                continue
+
             for j in get_double_pnictogens():
                 if j not in formula:
                     continue
 
-                print(formula)
+                docs['material_id'] = mid
+                docs['pretty_formula'] = formula
+                docs['cif'] = cif
 
-        # return data
+                yield docs
 
-get_list()
-# print(lst)
+def write_cif(docs, filename='II_IV_V2.zip'):
+    with ZipFile(filename, 'w') as f:
+        for d in docs:
+            f.writestr('{}_{}.cif'.format(d['pretty_formula'], d['material_id']), d['cif'])
+        
+    print('The cif files have been saved.')
 
+docs = get_list()
+# pprint([d for d in docs])
+write_cif(docs)
 
-# with MPRester(JINNYAPI) as m:
-#     data = m.query(criteria={"formula_reduced_abc": "C Mg N2"}, properties=["material_id", "spacegroup.symbol"])
-#     pprint(data)
-
-
-# with ZipFile('zintl_cifs.zip', 'w') as f:
-#     for d in docs:
-#         f.writestr('{}_{}.cif'.format(d['pretty_formula'], d['material_id']),
-#                    d['cif'])

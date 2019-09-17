@@ -120,3 +120,6 @@ oqmd/qmpy
 
 *.db
 
+mp/II_IV_V2.zip
+*.zip
+*.cif
