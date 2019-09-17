@@ -11,10 +11,10 @@ from pymatgen import Element, MPRester
 # m = MPRester(JINNYAPI)
 
 def get_alkaline():
-    return [el.symbol for el in Element if el.is_alkaline]
+    return [el.symbol for el in Element if el.is_alkaline or el.group == 12]
 
 def get_crystallogens():
-    return [el.symbol for el in Element if el.group == 14]
+    return [el.symbol for el in Element if el.group == 14 or el.group == 4]
 
 def get_pnictogens():
     return [el.symbol for el in Element if el.group == 15]
@@ -25,23 +25,23 @@ def get_double_pnictogens():
         nlst[i] = nlst[i] + '2'
     return nlst
 
-def get_semiconductors_chemsys():
+def get_query_chemsys():
     g2 = get_alkaline()
     g4 = get_crystallogens()
     g5 = get_pnictogens()
     return sorted(["{}-{}-{}".format(*sorted(pair))
                     for pair in itertools.product(g2, g4, g5)])
 
-def get_list():
+def get_result(query, properties=['material_id', 'pretty_formula', 'cif']):
     with MPRester(JINNYAPI) as m:
 
-        data = m.query({'chemsys': {'$in': get_semiconductors_chemsys()} }, ['material_id', 'pretty_formula', 'cif'])
+        data = m.query({'chemsys': {'$in': query} }, properties)
 
         for d in itertools.chain(data):
             docs = {}
             mid = d['material_id']
             formula = d['pretty_formula']
-            cif = d['cif']
+            # cif = d['cif']
 
             numbers = sum(letter.isdigit() for letter in formula)
 
@@ -54,9 +54,15 @@ def get_list():
 
                 docs['material_id'] = mid
                 docs['pretty_formula'] = formula
-                docs['cif'] = cif
+                # docs['cif'] = cif
 
                 yield docs
+
+def post_process(docs):
+    for d in docs:
+        if d['pretty_formula'][:2] not in get_crystallogens():
+            continue
+        yield d
 
 def write_cif(docs, filename='II_IV_V2.zip'):
     with ZipFile(filename, 'w') as f:
@@ -65,7 +71,8 @@ def write_cif(docs, filename='II_IV_V2.zip'):
         
     print('The cif files have been saved.')
 
-docs = get_list()
-# pprint([d for d in docs])
-write_cif(docs)
+docs = get_result(get_query_chemsys(), ['material_id', 'pretty_formula'])
+comp = post_process(docs)
+pprint([d for d in comp])
+# write_cif(docs)
 
