@@ -41,7 +41,7 @@ def get_result(query, properties=['material_id', 'pretty_formula', 'cif']):
             docs = {}
             mid = d['material_id']
             formula = d['pretty_formula']
-            # cif = d['cif']
+            cif = d['cif']
 
             numbers = sum(letter.isdigit() for letter in formula)
 
@@ -54,25 +54,34 @@ def get_result(query, properties=['material_id', 'pretty_formula', 'cif']):
 
                 docs['material_id'] = mid
                 docs['pretty_formula'] = formula
-                # docs['cif'] = cif
+                docs['cif'] = cif
 
                 yield docs
 
-def post_process(docs):
+def post_process_245(docs):
+    for d in docs:
+        if d['pretty_formula'][:2] not in get_alkaline():
+            continue
+        yield d
+
+def post_process_425(docs):
     for d in docs:
         if d['pretty_formula'][:2] not in get_crystallogens():
             continue
         yield d
 
-def write_cif(docs, filename='II_IV_V2.zip'):
+def write_cif(docs, filename):
     with ZipFile(filename, 'w') as f:
         for d in docs:
             f.writestr('{}_{}.cif'.format(d['pretty_formula'], d['material_id']), d['cif'])
         
-    print('The cif files have been saved.')
+    print('The cif files {} have been saved.'.format(filename))
 
-docs = get_result(get_query_chemsys(), ['material_id', 'pretty_formula'])
-comp = post_process(docs)
-pprint([d for d in comp])
-# write_cif(docs)
+docs = get_result(get_query_chemsys(), ['material_id', 'pretty_formula', 'cif'])
+# compnd245 = post_process_245(docs)
+compnd425 = post_process_425(docs)
+
+# pprint([c for c in compnd425])
+# write_cif(compnd245, 'II_IV_V2.zip')
+write_cif(compnd425, 'IV_II_V2.zip')
 
