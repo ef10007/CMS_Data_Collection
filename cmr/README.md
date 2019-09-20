@@ -11,7 +11,8 @@ All CMR databases are licensed under a Creative Commons Attribution-ShareAlike 4
 
 ----
 
-### Database list
+### Database list (SQLite3)
+
 
 #### 1. Computational 2D Materials Database (C2DB)
 
