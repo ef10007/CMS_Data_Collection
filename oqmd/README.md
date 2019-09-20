@@ -11,7 +11,11 @@ You can download the entire database with following url:
 
 #### Exploring database
 
-<img width="300" height="500" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/show_tables.png' > <img width="600" height="400" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/select_atom_table.png' >
+* Tables 
+<img align='center' width="300" height="500" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/show_tables.png' > <br />
+
+* Example table details - Atoms 
+<img align='center' width="600" height="400" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/select_atom_table.png' >
 
 <!-- ![Tables](https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/show_tables.png)
 ![Atoms Table](https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/select_atom_table.png) -->
