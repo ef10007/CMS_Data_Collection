@@ -11,5 +11,7 @@ You can download the entire database with following url:
 
 #### Exploring database
 
-![Tables](https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/select_tables.png)
-![Atoms Table](https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/select_atom_table.png)
+<img align="left" width="400" height="400" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/show_tables.png' >
+
+<!-- ![Tables](https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/show_tables.png)
+![Atoms Table](https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/select_atom_table.png) -->
