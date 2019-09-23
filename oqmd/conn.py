@@ -6,7 +6,7 @@ import json
 
 def get_conn():
     return pymysql.connect(
-    host=os.getenv('oqmd_host'),
+    host=os.getenv('gibbs_host'),
     user=os.getenv('oqmd_user'),
     password=os.getenv('oqmd_pw'),
     port=3306,
