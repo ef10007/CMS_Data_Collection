@@ -1,6 +1,6 @@
 import paramiko
 import os
-
+from pprint import pprint
 
 def start_connection(cmd):
     username = os.getenv('gibbs_user')
@@ -8,17 +8,18 @@ def start_connection(cmd):
     port = 22
     remote_ip = os.getenv('gibbs_host')
 
-    myconn = paramiko.SSHClient()
-    myconn.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-    session = myconn.connect(remote_ip, username =username, password=pw, port=port)
-    (stdin, stdout, stderr) = myconn.exec_command(cmd)
+    ssh.connect(remote_ip, username =username, password=pw, port=port)
+    ssh.invoke_shell()
+    (stdin, stdout, stderr) = ssh.exec_command(cmd)
 
-    print("{}".format(stdout.read()))
-    print("{}".format(type(myconn)))
-    print("Options available to deal with the connectios are many like\n{}".format(dir(myconn)))
-    myconn.close()
+    pprint(stdout.read())
+    pprint(stderr.read())
+    ssh.close()
 
 
 if __name__ == '__main__':
-    start_connection('sqlite3 /home/mtg/jinny/c2db.db')
+    sqlitecmd = 'sqlite3 /home/mtg/jinny/c2db.db' 
+    start_connection('ls -al')
