@@ -17,7 +17,6 @@ http_client.set_basic_auth(host, user, password)
 
 client = SwaggerClient.from_url('%s/swagger.json' % nomad_url, http_client=http_client)
 
-
 # Searching for data
 result = client.repo.search(paths='AcAg').response().result
 if result.pagination.total == 0:

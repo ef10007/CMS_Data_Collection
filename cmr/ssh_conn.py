@@ -16,10 +16,10 @@ def start_connection(cmd):
     (stdin, stdout, stderr) = ssh.exec_command(cmd)
 
     pprint(stdout.read())
-    pprint(stderr.read())
+    # pprint(stderr.read())
     ssh.close()
 
 
 if __name__ == '__main__':
     sqlitecmd = 'sqlite3 /home/mtg/jinny/c2db.db' 
-    start_connection('ls -al')
+    start_connection('ase db c2db.db')
