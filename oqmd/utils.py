@@ -12,16 +12,3 @@ def get_conn():
     port=3306,
     db='oqdb',
     charset='utf8')
-
-# print(os.getenv('oqmd_user'))
-
-sql_select = 'select * from atoms limit 10'
-
-conn = get_conn()
-    
-with conn:
-        
-    cur = conn.cursor()
-    cur.execute(sql_select)
-    rows = cur.fetchall()
-    print([row for row in rows])
