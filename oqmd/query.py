@@ -15,7 +15,6 @@ def get_conn():
 
 # print(os.getenv('oqmd_user'))
 
-
 sql_select = ''' SELECT cc.id, cc.path, cp.formula
                    FROM calculations cc
              INNER JOIN compositions cp
@@ -23,17 +22,20 @@ sql_select = ''' SELECT cc.id, cc.path, cp.formula
                   WHERE cc.composition_id = 'Ba1 O3 Ti1' 
              '''
 
-sql_columns = ''' SELECT COLUMN_NAME
-                    FROM INFORMATION_SCHEMA.COLUMNS
-                   WHERE TABLE_NAME = 'calculations'
-              '''
-
+sql_columns_join = ''' SELECT COLUMN_NAME
+                         FROM INFORMATION_SCHEMA.COLUMNS
+                        WHERE TABLE_NAME = 'calculations'
+                        UNION ALL
+                       SELECT COLUMN_NAME
+                         FROM INFORMATION_SCHEMA.COLUMNS
+                        WHERE TABLE_NAME = 'compositions'
+                    '''
 
 conn = get_conn()
     
 with conn:
         
     cur = conn.cursor()
-    cur.execute(sql_columns)
+    cur.execute(sql_columns_join)
     rows = cur.fetchall()
     pprint([row for row in rows])
