@@ -13,13 +13,13 @@ def get_conn():
     db='oqdb',
     charset='utf8')
 
-# print(os.getenv('oqmd_user'))
 
-sql_select = ''' SELECT cc.id, cc.path, cp.formula
+sql_select = ''' SELECT cc.*, cp.*
                    FROM calculations cc
              INNER JOIN compositions cp
                      ON cc.composition_id = cp.formula
                   WHERE cc.composition_id = 'Ba1 O3 Ti1' 
+                  LIMIT 10
              '''
 
 sql_columns_join = ''' SELECT COLUMN_NAME
@@ -32,10 +32,27 @@ sql_columns_join = ''' SELECT COLUMN_NAME
                     '''
 
 conn = get_conn()
-    
 with conn:
         
     cur = conn.cursor()
     cur.execute(sql_columns_join)
-    rows = cur.fetchall()
-    pprint([row for row in rows])
+    column_names = cur.fetchall()
+    column_list = [name[0] for name in column_names]
+    # print(len(column_list)) 27
+
+    cur.execute(sql_select)
+    data = cur.fetchall()
+    data_list = [d for d in data]
+
+
+for data in data_list:
+    result = {}
+    print('-----------------------------------')
+
+    for i, d in enumerate(data):
+        column = column_list[i]
+        output = d
+
+        result[column] = output
+    pprint(result)
+        
