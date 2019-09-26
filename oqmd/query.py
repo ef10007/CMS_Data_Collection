@@ -52,7 +52,6 @@ for data in data_list:
     for i, d in enumerate(data):
         column = column_list[i]
         output = d
-
         result[column] = output
     pprint(result)
         

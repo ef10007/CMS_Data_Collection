@@ -19,7 +19,8 @@ def get_molecules_with_piezo(query):
             lst.append((datum["pretty_formula"], datum["material_id"], datum["spacegroup.crystal_system"]))
 
     print("The query list has been saved.")
-    return lst                                                         
+    return lst  
+                                                    
 
 def get_csv(lst, filename='with_piezo.csv'):
 

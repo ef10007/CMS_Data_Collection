@@ -14,11 +14,8 @@ You can download the entire database with following url:
 
 * Tables 
 
-<img width="300" height="500" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/show_tables.png' > <br />
+<img width="300" height="500" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/img/show_tables.png' > <br />
 
-* Example table details - Atoms 
+* EER Diagram
 
-<img width="600" height="400" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/select_atom_table.png' >
-
-<!-- ![Tables](https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/show_tables.png)
-![Atoms Table](https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/select_atom_table.png) -->
+<img width="500" height="600" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/img/OQMD_EER_Diagram.png' > <br />
