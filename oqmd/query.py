@@ -31,27 +31,32 @@ sql_columns_join = ''' SELECT COLUMN_NAME
                         WHERE TABLE_NAME = 'compositions'
                     '''
 
-conn = get_conn()
-with conn:
-        
-    cur = conn.cursor()
-    cur.execute(sql_columns_join)
-    column_names = cur.fetchall()
-    column_list = [name[0] for name in column_names]
-    # print(len(column_list)) 27
+def get_data():
+    conn = get_conn()
+    with conn:
+            
+        cur = conn.cursor()
+        cur.execute(sql_columns_join)
+        column_names = cur.fetchall()
+        column_list = [name[0] for name in column_names]
+        # print(len(column_list)) 27
 
-    cur.execute(sql_select)
-    data = cur.fetchall()
-    data_list = [d for d in data]
+        cur.execute(sql_select)
+        data = cur.fetchall()
+        data_list = [d for d in data]
 
+    return column_list, data_list
 
-for data in data_list:
-    result = {}
-    print('-----------------------------------')
+def output(column_list, data_list):
+    for data in data_list:
+        result = {}
+        print('-----------------------------------')
 
-    for i, d in enumerate(data):
-        column = column_list[i]
-        output = d
-        result[column] = output
-    pprint(result)
-        
+        for i, d in enumerate(data):
+            column = column_list[i]
+            output = d
+            result[column] = output
+        pprint(result)
+
+column_list, data_list = get_data()
+output(column_list, data_list)
