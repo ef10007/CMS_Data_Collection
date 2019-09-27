@@ -13,24 +13,6 @@ def get_conn():
     db='oqdb',
     charset='utf8')
 
-
-sql_select = ''' SELECT cc.*, cp.*
-                   FROM calculations cc
-             INNER JOIN compositions cp
-                     ON cc.composition_id = cp.formula
-                  WHERE cc.composition_id = 'Ba1 O3 Ti1' 
-                  LIMIT 10
-             '''
-
-sql_columns_join = ''' SELECT COLUMN_NAME
-                         FROM INFORMATION_SCHEMA.COLUMNS
-                        WHERE TABLE_NAME = 'calculations'
-                        UNION ALL
-                       SELECT COLUMN_NAME
-                         FROM INFORMATION_SCHEMA.COLUMNS
-                        WHERE TABLE_NAME = 'compositions'
-                    '''
-
 def get_data():
     conn = get_conn()
     with conn:
@@ -57,6 +39,24 @@ def output(column_list, data_list):
             output = d
             result[column] = output
         pprint(result)
+        
+
+sql_select = ''' SELECT cc.*, cp.*
+                   FROM calculations cc
+             INNER JOIN compositions cp
+                     ON cc.composition_id = cp.formula
+                  WHERE cc.composition_id = 'Ba1 O3 Ti1' 
+                  LIMIT 10
+             '''
+
+sql_columns_join = ''' SELECT COLUMN_NAME
+                         FROM INFORMATION_SCHEMA.COLUMNS
+                        WHERE TABLE_NAME = 'calculations'
+                        UNION ALL
+                       SELECT COLUMN_NAME
+                         FROM INFORMATION_SCHEMA.COLUMNS
+                        WHERE TABLE_NAME = 'compositions'
+                    '''
 
 column_list, data_list = get_data()
 output(column_list, data_list)

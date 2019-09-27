@@ -15,9 +15,12 @@ Thermodynamic = ['formation_energy_per_atom', 'e_above_hull']
 
 Mechanical = ['elasticity', 'piezo', 'diel']
 
+basic.extend(Thermodynamic)
+basic.extend(Mechanical)
+# print(basic)
 
 with MPRester(JINNYAPI) as m:
 
     data = m.query({"pretty_formula": "BaTiO3"}, properties=basic)
-    pprint(data)
+    pprint(data[0])
 
