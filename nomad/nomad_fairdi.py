@@ -15,10 +15,13 @@ host = urlparse(nomad_url).netloc.split(':')[0]
 http_client = RequestsClient()
 http_client.set_basic_auth(host, user, password)
 
-client = SwaggerClient.from_url('%s/swagger.json' % nomad_url, http_client=http_client)
+# client = SwaggerClient.from_url('%s/swagger.json' % nomad_url, http_client=http_client)
+client = SwaggerClient.from_url('%s/swagger.json' % nomad_url)
+
 
 # Searching for data
 result = client.repo.search(paths='AcAg').response().result
+
 if result.pagination.total == 0:
     print('not found')
 elif result.pagination.total > 1:

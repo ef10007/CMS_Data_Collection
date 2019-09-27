@@ -11,12 +11,14 @@ from pymatgen import Element, MPRester
 
 basic = ['pretty_formula', 'unit_cell_formula', 'icsd_ids', 'energy', 'energy_per_atom', 'volume', 'density', 'nsites','elements', 'nelements', 'spacegroup', 'initial_structure', 'final_structure', 'structure', 'cif']
 
+# basic = ['pretty_formula', 'unit_cell_formula', 'icsd_ids', 'energy', 'energy_per_atom', 'volume', 'density', 'nsites','elements', 'nelements', 'spacegroup', 'structure', 'cif']
+
 Thermodynamic = ['formation_energy_per_atom', 'e_above_hull']
 
 Mechanical = ['elasticity', 'piezo', 'diel']
 
-basic.extend(Thermodynamic)
-basic.extend(Mechanical)
+# basic.extend(Thermodynamic)
+# basic.extend(Mechanical)
 # print(basic)
 
 with MPRester(JINNYAPI) as m:
