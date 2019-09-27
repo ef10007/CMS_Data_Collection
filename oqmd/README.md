@@ -18,4 +18,4 @@ You can download the entire database with following url:
 
 * EER Diagram
 
-<img width="800" height="600" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/img/OQMD_EER_Diagram.png' > <br />
+<img width="850" height="700" src='https://github.com/ef10007/CMS_Data_Collection/blob/master/oqmd/img/OQMD_EER_Diagram.png' > <br />
