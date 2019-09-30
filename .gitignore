@@ -123,3 +123,5 @@ oqmd/qmpy
 mp/II_IV_V2.zip
 *.zip
 *.cif
+
+config.py

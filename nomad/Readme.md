@@ -11,9 +11,11 @@ https://gitlab.mpcdf.mpg.de/nomad-lab/nomad-FAIR <br />
 
 API document:  <br />  
 https://repository.nomad-coe.eu/uploads/api/docs/index.html <br /> 
-
+https://encyclopedia.nomad-coe.eu/doc <br />
+ 
 Encyclopedia  <br />
 http://exciting-code.org/nitrogen-nomad-encyclopedia  <br />
+
 
 Static files: <br />
 http://data.nomad-coe.eu
