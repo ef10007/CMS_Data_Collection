@@ -2,23 +2,15 @@ import requests
 from config import token
 import os
 from bs4 import BeautifulSoup
+from pprint import pprint
 
-gui_url = 'https://encyclopedia.nomad-coe.eu/gui'
 api_access_token = token["token"]["data"]
 
-soup = BeautifulSoup(gui_url)
-print(soup)
-
-exit()
-
-# url = 'https://encyclopedia.nomad-coe.eu/api/v1.0/materials/71780' # space group 62
+url = 'https://encyclopedia.nomad-coe.eu/api/v1.0/materials/71780' # space group 62
 # url = 'https://encyclopedia.nomad-coe.eu/api/v1.0/materials/257771' # space group 221
-
-url = 'https://encyclopedia.nomad-coe.eu/api/v1.0/materials/426707'
+# url = 'https://encyclopedia.nomad-coe.eu/api/v1.0/materials/426707' #space group 148
 
 os.system('curl -v -u {} {}'.format(api_access_token, url))
-
-
 
 
 # ---------------------------------------------------------------------------------------------------------------------
