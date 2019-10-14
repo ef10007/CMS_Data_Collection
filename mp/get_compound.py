@@ -1,12 +1,11 @@
-from pymatgen import MPRester
+
+from pymatgen import Element, MPRester
 from pprint import pprint
 import os
 JINNYAPI = os.environ['materials_project']
 
 import itertools
 from zipfile import ZipFile
-
-from pymatgen import Element, MPRester
 
 # m = MPRester(JINNYAPI)
 

@@ -41,11 +41,19 @@ def output(column_list, data_list):
         pprint(result)
         
 
+# sql_select = ''' SELECT cc.*, cp.*
+#                    FROM calculations cc
+#              INNER JOIN compositions cp
+#                      ON cc.composition_id = cp.formula
+#                   WHERE cc.composition_id = 'Ba1 O3 Ti1' 
+#                   LIMIT 10
+#              '''
+
 sql_select = ''' SELECT cc.*, cp.*
                    FROM calculations cc
              INNER JOIN compositions cp
                      ON cc.composition_id = cp.formula
-                  WHERE cc.composition_id = 'Ba1 O3 Ti1' 
+                  WHERE cc.composition_id = 'Fe1 Ni1' 
                   LIMIT 10
              '''
 
