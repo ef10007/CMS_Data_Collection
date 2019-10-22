@@ -1,7 +1,9 @@
 # computational_materials_science
 
-A project for the integration of individual CMS related databases into our own database.
-https://docs.google.com/presentation/d/1SzsClutjdnYGgOswSwFiYGEIqFhD6TTmpk_4xGvrqDM/edit?usp=sharing
+The project has been set up to explore Materials science data and get an insight into the efficient-querying method. There are plenty of a number of scientific database projects. We have selected four repositories and dealt with API and distinctive database system to establish a pipeline to our endpoint. It encompasses Python, Linux, MySQL, SQLite, MongoDB syntax, SSH Connection and Scientific Domain knowledge. 
+
+##### Resources
+PPT  https://1drv.ms/p/s!Al7gDBtOhPI7jnMFjaxPWGwKw5CI
 
 ### List of databases
 
